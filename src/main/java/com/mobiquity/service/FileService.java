@@ -1,9 +1,9 @@
 package com.mobiquity.service;
 
+import java.io.File;
+
 public interface FileService {
 
-    void open(String path);
-
-    void close();
+    File openFile(String path);
 
 }

@@ -3,13 +3,10 @@ package com.mobiquity.controller;
 import com.mobiquity.config.ApiPaths;
 import com.mobiquity.exception.APIException;
 import com.mobiquity.packer.Packer;
-import com.mobiquity.service.FileService;
-import com.mobiquity.service.FileServiceImpl;
 import com.mobiquity.utils.ErrorDetails;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +32,7 @@ public class PackageController {
         try {
             Packer.pack(path);
         } catch (APIException e) {
-            throw new APIException(e.getMessage());
+            throw new APIException("Error in Packer", e);
         }
         return null;
     }

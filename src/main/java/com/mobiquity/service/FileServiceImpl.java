@@ -11,25 +11,16 @@ import java.io.IOException;
 public class FileServiceImpl implements FileService{
 
     @Override
-    public void open(String path) {
+    public File openFile(String path) {
         try {
             File file = new File(path);
-            FileInputStream fis=new FileInputStream(file);     //opens a connection to an actual file
-            System.out.println("file content: ");
-            int r=0;
-            while((r=fis.read())!=-1)
-            {
-                System.out.print((char)r);      //prints the content of the file
-            }
+            FileInputStream fis = new FileInputStream(file);     //opens a connection to an actual file
+            return file;
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-    }
-
-    @Override
-    public void close() {
-
+        return null;
     }
 }
