@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-@Service
+@Service("FileService")
 public class FileServiceImpl implements FileService{
 
     @Override
