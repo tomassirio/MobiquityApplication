@@ -7,6 +7,7 @@ import com.mobiquity.utils.ErrorDetails;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,10 +31,9 @@ public class PackageController {
     public ResponseEntity<Object> packer(@RequestParam String path) throws APIException {
         log.info("Requesting files from path {}", path);
         try {
-            Packer.pack(path);
+            return new ResponseEntity<>(Packer.pack(path), HttpStatus.OK);
         } catch (APIException e) {
             throw new APIException("Error in Packer", e);
         }
-        return null;
     }
 }
