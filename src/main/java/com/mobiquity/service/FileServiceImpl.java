@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 
 @Service("FileService")
 public class FileServiceImpl implements FileService{
@@ -27,5 +24,18 @@ public class FileServiceImpl implements FileService{
             ioException.printStackTrace();
         }
         return file;
+    }
+
+    @Override
+    public void writeToPath(String path, String input){
+        log.info("Writing to file on path: {}", path);
+        try {
+            File file = new File(path+"_output");
+            FileWriter myWriter = new FileWriter(file.getName());
+            myWriter.write(input);
+            myWriter.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
