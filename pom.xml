@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mobiquity</groupId>
-	<artifactId>implementation</artifactId>
+	<artifactId>api-mobiquity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>implementation</name>
+	<name>api-mobiquity</name>
 	<description>Mobiqutiy&apos;s application Tomas Sirio</description>
 	<properties>
 		<java.version>16</java.version>
@@ -60,12 +60,10 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+			<groupId>com.mobiquity</groupId>
+			<artifactId>implementation</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
