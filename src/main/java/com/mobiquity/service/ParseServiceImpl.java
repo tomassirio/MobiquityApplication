@@ -68,7 +68,7 @@ public class ParseServiceImpl implements ParseService{
             ItemDTO item = ItemFactory.createItem(
                     Integer.valueOf(itemParts[0]),
                     Double.valueOf(itemParts[1]),
-                    Double.valueOf(itemParts[2]));
+                    Integer.valueOf(itemParts[2]));
             itemDTOList.add(item);
         }
         return itemDTOList;
