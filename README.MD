@@ -21,6 +21,11 @@ However this was separated on two repositories to enhance the application's modu
    and also because it was solicited on the assignment.
 5. Unit testing was applied with PowerMock
 
+## Known issues
+1- As was stated on the tests in the Library repository. I've been having an issue with 
+the Validators mocking which is inhabiting me of testing the static functions through
+PowerMockito
+
 ## :bust_in_silhouette: Who Am I?
 
 <img src="https://media.discordapp.net/attachments/763140054825697301/763681938652528690/logo-design-branding-logo-tool-open-electronic-1-5f7ed02bc8247.png?width=468&height=468" width="410" height="410" /></p>
